@@ -1,0 +1,11 @@
+version: "3.4"
+
+services:
+    analytics:
+        container_name: analytics
+        build:
+            context: .
+            dockerfile: Dockerfile.production
+        ports:
+            - "7500:7500"
+        restart: always
