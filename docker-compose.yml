@@ -6,6 +6,8 @@ services:
         build:
             context: .
             dockerfile: Dockerfile.production
+        volumes:
+            - "./data.json:/usr/src/app/data.json"
         ports:
             - "7500:7500"
         restart: always
