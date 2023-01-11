@@ -1,5 +1,6 @@
 import json
 
+from pathlib import Path
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -8,6 +9,7 @@ with open("config.json", "r") as f:
     global config
     config = json.load(f)
 
+Path("data.json").touch(exist_ok=True)
 with open("data.json", "r+") as f:
     global data
     try:
